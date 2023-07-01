@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+
+<body class="bg-blue-100">
+ <div
+      class='w-full bg-[#0f172a] h-full min-h-[100vh]
+      py-4
+      px-4
+      md:px-20'
+    >
+      <div class='w-full'>
+        <div
+          class='flex flex-row justify-between items-center
+        w-full h-10 px-5 2xl:px-40'
+        >
+          <h3 class='cursor-pointer text-3xl font-bold text-cyan-600'>
+            Summary!
+          </h3>
+
+        </div>
+
+      <div
+        class='w-full mt-10 flex flex-col gap-5 shadow-md
+      items-center justify-center'
+      >
+
+            <p class='text-white font-semibold text-lg'>Summary History</p>
+              <div
+                class='max-w-2xl bg-slate-800 p-3 rounded-md'
+              >
+                <p class='text-gray-400 text-lg'></p>
+                <div class='flex gap-5 items-center justify-end mt-2'>
+                  <p id="result"
+                    class='text-gray-500 font-semibold cursor-pointer'
+                  >
+                  {{result}}
+                  </p>
+                  <span
+                    class='cursor-pointer'
+                  >
+                    <img  class='w-6 h-6' src="static\img\copy.png" onclick="copyText()" />
+                  </span>
+                </div>
+              </div>
+
+
+      </div>
+      </div>
+      </div>
+        <script>
+      function copyText()
+      {
+          var copy = document.getElementById("result");
+          
+
+
+  navigator.clipboard.writeText(copy.innerText);
+
+    alert("Copied the text: " + copy.innerText);
+      }
+        </script>
+</body>
+
+</html>
